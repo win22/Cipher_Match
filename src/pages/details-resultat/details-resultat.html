@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-navbar color="pink">
+    <ion-title>
+      {{Equipe.title1}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content fullscreen class="bg">
+  <div *ngIf="Equipe">
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center>
+          <h1>{{Equipe.position}}<sup>nd</sup></h1>
+          <p>Championat</p>
+          <p>Position</p>
+        </ion-col>
+
+        <ion-col text-center>
+         <img [src]="Equipe.images[0]">
+          <h3>Score</h3>
+        </ion-col>
+
+        <ion-col text-center>
+          <img [src]="Equipe.images[4]" WIDTH="45px" padding-bottom="5px">
+          <p>{{Equipe.championat}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+         <h1>{{Equipe.title1}}</h1>
+          <p>{{Equipe.possession}}</p>
+          <p>{{Equipe.TirsC}}</p>
+          <p>{{Equipe.passe}}</p>
+          <p>{{Equipe.CoupFran}}</p>
+          <p>{{Equipe.corner}}</p>
+          <p>{{Equipe.Fautes}}</p>
+
+        </ion-col>
+        <ion-col text-center>
+         <h1>{{Equipe.score1}} - {{Equipe.scorre2}}</h1>
+        <p>Possessions</p>
+        <p>Tirs cadrés</p>
+        <p>Passes</p>
+        <p>Coup franc</p>
+        <p>Corner</p>
+        <p>Fautes</p>
+
+        </ion-col> <ion-col text-center>
+       <h1>{{Equipe.title2}}</h1>
+        <p>{{Equipe.possession2}}</p>
+        <p>{{Equipe.TirsC2}}</p>
+        <p>{{Equipe.passe2}}</p>
+        <p>{{Equipe.CoupFran2}}</p>
+        <p>{{Equipe.corner2}}</p>
+        <p>{{Equipe.Fautes2}}</p>
+      </ion-col>
+      </ion-row>
+
+    </ion-grid>
+    <ion-card>
+      <div class="name">
+        <h1>{{Equipe.brefDesc}}</h1>
+      </div>
+      <ion-slides  pager autoplay="1500" loop="true">
+        <ion-slide>
+          <img [src]="Equipe.images[1]">
+        </ion-slide>
+        <ion-slide>
+          <img [src]="Equipe.images[2]">
+        </ion-slide>
+        <ion-slide>
+          <img [src]="Equipe.images[3]">
+        </ion-slide>
+      </ion-slides>
+
+      <ion-card-content color="#pink">
+        <p class="pColor">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-infinite-scroll>
+
+  </ion-infinite-scroll>
+</ion-content>

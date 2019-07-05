@@ -1,14 +1,68 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="pink">
+    <button ion-button="" menuToggle="" (click)="onToggleMenu()">
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
-      Ionic Blank
+      Acceuil
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content fullscreen>
+
+  <ion-card>
+    <p>Le Top 10 des meilleurs Joueurs cette semaine...</p>
+        <ion-slides pager autoplay="1500" loop="true">
+      <ion-slide class="card1" *ngFor="let j of ListJoueurs">
+        <img src="{{j.image}}">
+        <ion-item>
+          {{j.title}}
+        </ion-item>
+      </ion-slide>
+    </ion-slides>
+
+  </ion-card>
+  <ion-item-divider color="pink">
+    <ion-label>Actualié du monde des Foot</ion-label>
+  </ion-item-divider>
+
+  <ion-list>
+  <ion-card class="ion-card" *ngFor="let m of ListMatch"   (click)="showDetail(m)">
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="m.images[0]">
+      </ion-avatar>
+      <p> Date du Match: {{m.date}}</p>
+    </ion-item>
+
+      <img  [src]="m.images[1]">
+      <div><p class="card-title">{{m.title1}} {{m.score1}} - {{m.scorre2}}  {{m.title2}}</p></div>
+      <div class="card-subtitle">{{m.stade}}</div>
+      <p >{{m.brefDesc}} Lire plus....</p>
+
+
+
+    <ion-row>
+      <ion-col>
+        <button color="pink" ion-button icon-start clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div class="iconCard">{{m.Likes}}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button color="pink"  ion-button icon-start clear small>
+          <ion-icon name="text"></ion-icon>
+          <div class="iconCard">{{m.comments}}</div>
+        </button>
+      </ion-col>
+      <ion-col align-self-center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  </ion-list>
 </ion-content>
+

@@ -1,0 +1,47 @@
+page-details-resultat {
+  .bg {
+    height: 100%;
+    width: 100%;
+    padding-top: 12px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.98) 1.48%, rgba(3,62,119,0.68) 12.58%,
+      rgb(210, 17, 83) 89.52%), url('../assets/imgs/bg.jpg');
+  }
+
+  ion-icon{
+    color: #fff;
+    font-size: 2.2em;
+    margin-left: 15px;
+  }
+
+  ion-grid ion-row ion-col{
+    color: #ffffff;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Canterell, 'Open San', 'Helvetica Neue', sans-serif;
+  }
+
+  ion-grid ion-row ion-col h1 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Canterell, 'Open San', 'Helvetica Neue', sans-serif;
+    font-size: 2.2em;
+    font-weight: lighter;
+  };
+
+  ion-card {
+    //padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .card-md {
+    margin: 0px !important;
+  }
+
+  .name{
+    position: absolute;
+  }
+  .name h1{
+    color: #fff;
+    padding-top: 2px;
+    font-size: 0.9em;
+  }
+  .pColor {
+  color: #fff;
+}
+}

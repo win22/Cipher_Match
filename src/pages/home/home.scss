@@ -1,3 +1,46 @@
-page-home {
+page-home{
+  .card1{
+    height: 180px;
+  }
 
+  .myImg1{
+    width: 70%;
+    margin: auto;
+  }
+
+  .ion-card {
+    position: relative;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Canterell, 'Open San', 'Helvetica Neue', sans-serif;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 1.9em !important;
+    width: 100%;
+    font-weight: bold;
+    color: #fff !important;
+    text-shadow: 2px 4px 6px #1c1c1c;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Canterell, 'Open San', 'Helvetica Neue', sans-serif;
+  }
+
+  .card-subtitle {
+    font-size: 1.4em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+    text-shadow: 2px 4px 6px #1c1c1c;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Canterell, 'Open San', 'Helvetica Neue', sans-serif;
+  }
+
+  p{
+    color: #fff !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Canterell, 'Open San', 'Helvetica Neue', sans-serif;
+  }
+
+  .iconCard{
+    color: #fff !important;
+  }
 }

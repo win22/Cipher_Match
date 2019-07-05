@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="pink">
+    <button ion-button="" menuToggle="" (click)="onToggleMenu()">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Equipes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item ion-item  *ngFor="let e of List" >
+      <ion-thumbnail item-start>
+        <img src="{{e.images[0]}}">
+      </ion-thumbnail>
+      <h2>{{e.title}}</h2>
+      <h3>{{e.entreneur}}</h3>
+    </ion-item>
+  </ion-list>
+</ion-content>

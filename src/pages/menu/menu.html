@@ -1,0 +1,31 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="pink">
+      <ion-title>
+        Menu
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content fullscreen class="bg">
+    <img src="assets/imgs/competitions/ufa.jpg">
+  <ion-list>
+    <button ion-item icon-start (click)="onNavigatePage(rootPage)">
+      <ion-icon name="home" color="pink"></ion-icon>
+      Acceuil
+    </button>
+    <button ion-item icon-start (click)="onNavigatePage(equipePage)">
+      <ion-icon name="people" color="pink"></ion-icon>
+      Equipe
+    </button>
+    <button ion-item icon-start (click)="onNavigatePage()">
+      <ion-icon name="help" color="pink"></ion-icon>
+      Aide
+    </button>
+    <button ion-item icon-start (click)="onNavigatePage()">
+      <ion-icon name="redo" color="pink"></ion-icon>
+      Déconnexion
+    </button>
+  </ion-list>
+</ion-content>
+</ion-menu>
+<ion-nav #content [root]="rootPage"></ion-nav>

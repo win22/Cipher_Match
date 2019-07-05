@@ -6,11 +6,22 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import {JoueursService} from "../services/Joueurs.service.";
+import {DetailsResultatPage} from "../pages/details-resultat/details-resultat";
+import {MatchService} from "../services/match.service";
+import {MenuPage} from "../pages/menu/menu";
+import {TabsPage} from "../pages/tabs/tabs";
+import {ListEquipePage} from "../pages/list-equipe/list-equipe";
+import {EquipeService} from "../services/equipe.service";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    DetailsResultatPage,
+    MenuPage,
+    TabsPage,
+    ListEquipePage,
   ],
   imports: [
     BrowserModule,
@@ -19,11 +30,20 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    DetailsResultatPage,
+    MenuPage,
+    TabsPage,
+    ListEquipePage,
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    JoueursService,
+    MatchService,
+    EquipeService,
+
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
