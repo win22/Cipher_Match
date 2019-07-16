@@ -13,12 +13,13 @@ export class EquipeService {
       competition: 'Premiere Ligue',
       entreneur: 'Jürgen Klopp',
       nombreJour: '12',
+      site: 'www.liverpoolfc.com',
       images: [
         'assets/imgs/logo/Li.png',
+        'assets/imgs/equipe/liverpool1.jpg',
         'assets/imgs/equipe/s.jpg',
         'assets/imgs/joueurs/sd.jpg',
-        'assets/imgs/equipe/liverpool.jpg',
-        'assets/imgs/logo/LogoLigue.svg.png',
+        'assets/imgs/equipe/liverE.jpeg',
       ]
     },
     {
@@ -27,12 +28,13 @@ export class EquipeService {
       competition: 'La Ligua',
       entreneur: 'Ernesto Valverde',
       nombreJour: '19',
+      site:'www.fcbarcelona.fr/fr',
       images: [
         'assets/imgs/logo/logoBarca.png',
-        'assets/imgs/equipe/s.jpg',
-        'assets/imgs/joueurs/sd.jpg',
-        'assets/imgs/equipe/liverpool.jpg',
-        'assets/imgs/logo/LogoLigue.svg.png',
+        'assets/imgs/equipe/barca2.jpg',
+        'assets/imgs/joueurs/me.jpg',
+        'assets/imgs/equipe/barca3.JPG',
+        'assets/imgs/equipe/barçaE.jpeg',
       ]
     },
     {
@@ -41,12 +43,13 @@ export class EquipeService {
       competition: 'Premiere Ligue',
       entreneur: 'Thomas Tuchel',
       nombreJour: '21',
+      site: 'www.psg.fr',
       images: [
         'assets/imgs/logo/paris.svg.png',
-        'assets/imgs/equipe/s.jpg',
-        'assets/imgs/joueurs/sd.jpg',
-        'assets/imgs/equipe/liverpool.jpg',
-        'assets/imgs/logo/LogoLigue.svg.png',
+        'assets/imgs/equipe/paris3.jpg',
+        'assets/imgs/equipe/paris2.jpg',
+        'assets/imgs/equipe/paris.jpg',
+        'assets/imgs/equipe/parisE.jpeg',
       ]
     },
     {
@@ -55,12 +58,13 @@ export class EquipeService {
       competition: 'Premiere Ligue',
       entreneur: 'Frank Lampard',
       nombreJour: '18',
+      site: 'www.chelseafc.com',
       images: [
         'assets/imgs/logo/LogoChealse.png',
-        'assets/imgs/equipe/s.jpg',
-        'assets/imgs/joueurs/sd.jpg',
-        'assets/imgs/equipe/liverpool.jpg',
-        'assets/imgs/logo/LogoLigue.svg.png',
+        'assets/imgs/equipe/chealse4.jpg',
+        'assets/imgs/equipe/chealse1.jpg',
+        'assets/imgs/equipe/chealse2.jpg',
+        'assets/imgs/equipe/chealseE.jpeg',
       ]
     },
     {
@@ -69,26 +73,30 @@ export class EquipeService {
       competition: 'Premiere Ligue',
       entreneur: 'Unai Emery',
       nombreJour: '12',
+      site: 'www.arsenal.com',
       images: [
         'assets/imgs/logo/Arsenal_FC.svg',
-        'assets/imgs/equipe/s.jpg',
-        'assets/imgs/joueurs/sd.jpg',
-        'assets/imgs/equipe/liverpool.jpg',
-        'assets/imgs/logo/LogoLigue.svg.png',
+        'assets/imgs/equipe/arsenal.jpg',
+        'assets/imgs/equipe/arsenal2.jpg',
+        'assets/imgs/equipe/arsenal3.jpg',
+        'assets/imgs/equipe/arsenalE.jpeg',
+
       ]
     },
     {
       title: 'Réal-Madrid',
       desciption : 'Le Real Madrid Club de Fútbol, plus connu sous le nom de Real Madrid (souvent réduit à Real ou, en Espagne, El Madrid) est un club professionnel espagnol de football, basé à Madrid. Vainqueur de très nombreux titres nationaux et internationaux, il a reçu de la Fédération internationale de football association (FIFA) le titre honorifique de plus grand club du xxe siècle.',
-      competition: 'Premiere Ligue',
-      entreneur: 'Thomas Tuchel',
+      competition: 'La Ligua',
+      entreneur: 'Zinédine Zidane',
       nombreJour: '21',
+      site: 'wwww.realmadrid.com/fr',
       images: [
         'assets/imgs/logo/LogoReal.svg.png',
-        'assets/imgs/equipe/s.jpg',
-        'assets/imgs/joueurs/sd.jpg',
-        'assets/imgs/equipe/liverpool.jpg',
-        'assets/imgs/logo/LogoLigue.svg.png',
+        'assets/imgs/equipe/real.jpg',
+        'assets/imgs/equipe/Real1.jpg',
+        'assets/imgs/equipe/Real3.jpg',
+        'assets/imgs/equipe/realE.jpeg',
+
       ]
     },
     {
@@ -97,12 +105,14 @@ export class EquipeService {
       competition: 'Zinédine Zidane',
       entreneur: 'Ole Gunnar Solskjær',
       nombreJour: '18',
+      site: 'wwww.manutd.com/fr',
       images: [
         'assets/imgs/logo/LogoManchester.png',
-        'assets/imgs/equipe/s.jpg',
-        'assets/imgs/joueurs/sd.jpg',
-        'assets/imgs/equipe/liverpool.jpg',
-        'assets/imgs/logo/LogoLigue.svg.png',
+        'assets/imgs/equipe/Manch.jpg',
+        'assets/imgs/equipe/Manch1.jpg',
+        'assets/imgs/equipe/Manch3.jpg',
+        'assets/imgs/equipe/ManchE.jpg',
+
       ]
     },
     {
@@ -111,12 +121,14 @@ export class EquipeService {
       competition: 'Premiere Ligue',
       entreneur: 'André Villas-Boas',
       nombreJour: '12',
+      site: 'wwww.om.net',
       images: [
         'assets/imgs/logo/marseille.svg',
-        'assets/imgs/equipe/s.jpg',
-        'assets/imgs/joueurs/sd.jpg',
-        'assets/imgs/equipe/liverpool.jpg',
-        'assets/imgs/logo/LogoLigue.svg.png',
+        'assets/imgs/equipe/marseille.jpg',
+        'assets/imgs/equipe/Marseille3.jpg',
+        'assets/imgs/equipe/Marseille2.jpg',
+        'assets/imgs/equipe/marseilE.jpeg',
+
       ]
     }
 

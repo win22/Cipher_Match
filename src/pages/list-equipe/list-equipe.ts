@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular';
 import {Equipe} from "../../models/equipe";
 import {EquipeService} from "../../services/equipe.service";
+import {DetailEquipePage} from "../detail-equipe/detail-equipe";
 
 @IonicPage()
 @Component({
@@ -9,7 +10,7 @@ import {EquipeService} from "../../services/equipe.service";
   templateUrl: 'list-equipe.html',
 })
 export class ListEquipePage {
-  List: Equipe [];
+  List: Equipe[];
   constructor(public navCtrl: NavController, public navParams: NavParams, private listEquipeService: EquipeService, private menuCtl:MenuController) {
   }
 
@@ -20,5 +21,9 @@ export class ListEquipePage {
 
   onToggleMenu() {
     this.menuCtl.open();
+  }
+
+  showDetail(e: Equipe){
+    this.navCtrl.push(DetailEquipePage, {data: e});
   }
 }

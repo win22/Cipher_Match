@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="pink">
+    <ion-title>Programme des Matchs</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen class="bg">
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center="">
+        <h3>Programme des matchs</h3>
+        <p>De grand Match avec beaucoup de suspence nous attends cette semaine</p>
+        <h4>Match</h4>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let p of programme">
+      <ion-col text-center>
+      <img [src]="p.images[0]" WIDTH="40px">
+      </ion-col>
+      <ion-col text-center>
+        <p>{{p.title1}}</p>
+      </ion-col>
+      <ion-col text-center>
+        <p>-</p>
+        <p>{{p.date}}</p>
+        <p>{{p.stadium}}</p>
+        <P>{{p.ticket}}</P>
+      </ion-col>
+      <ion-col text-center>
+      <p>{{p.title2}}</p>
+      </ion-col>
+      <ion-col text-center>
+        <img [src]="p.images[1]"  WIDTH="40px">
+      </ion-col>
+      ______________________________________________________________________________________
+    </ion-row>
+
+
+  </ion-grid>
+</ion-content>

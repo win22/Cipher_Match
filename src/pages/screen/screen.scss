@@ -1,0 +1,17 @@
+page-screen {
+  .bg {
+    height: 100%;
+    width: 100%;
+    background: url('../assets/imgs/competitions/bg.jpg');
+    background-repeat: no-repeat;
+
+  }
+
+
+  .head h1 {
+    font-size: 7vh!important;
+    font-weight: lighter!important;
+    font-family: 'Pacifico', cursive;
+    padding-top: 180px;
+  }
+}

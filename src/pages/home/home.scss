@@ -1,4 +1,11 @@
 page-home{
+  .bg {
+    height: 100%;
+    width: 100%;
+    padding-top: 12px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.98) 1.48%, rgba(3,62,119,0.68) 12.58%,
+      rgb(1, 10, 50) 89.52%), url('../assets/imgs/bg.jpg');
+  }
   .card1{
     height: 180px;
   }
@@ -11,10 +18,14 @@ page-home{
   .ion-card {
     position: relative;
     text-align: center;
+
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Canterell, 'Open San', 'Helvetica Neue', sans-serif;
   }
 
+
+
   .card-title {
+    background: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 36%;
     font-size: 1.9em !important;
@@ -26,6 +37,7 @@ page-home{
   }
 
   .card-subtitle {
+
     font-size: 1.4em;
     position: absolute;
     top: 52%;
@@ -42,5 +54,14 @@ page-home{
 
   .iconCard{
     color: #fff !important;
+  }
+
+  ion-card {
+    //padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .card-md {
+    margin: 0px !important;
   }
 }

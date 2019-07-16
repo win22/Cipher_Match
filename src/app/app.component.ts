@@ -1,29 +1,47 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {LoadingController, Nav, NavController, Platform} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import {DetailsResultatPage} from "../pages/details-resultat/details-resultat";
-import {MenuPage} from "../pages/menu/menu";
+
 import {TabsPage} from "../pages/tabs/tabs";
+import * as firebase from 'firebase';
+import {LoginPage} from "../pages/login/login";
+import {AuthService} from "../services/auth.service";
+import {MenuPage} from "../pages/menu/menu";
+import {ScreenPage} from "../pages/screen/screen";
+
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage:any = ScreenPage;
+  @ViewChild('content') nav: NavController
+  constructor( public platform: Platform,
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+               public statusBar: StatusBar,
+             //  public splashScreen: SplashScreen,
+               public loadingCtl: LoadingController,
+               public authService : AuthService ) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
+     statusBar.styleDefault();
+    /*  if (platform.is('android')) {
+        statusBar.backgroundColorByHexString("#33000000");
+
+      }*/
+     // splashScreen.hide();
     });
   }
+
+
 
   onNavigatePage() {
 
   }
+
+
+
+
 }
 

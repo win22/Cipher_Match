@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+page-login {
+  .bg {
+    height: 100%;
+    width: 100%;
+    background: url('../assets/imgs/competitions/bg.jpg');
+    background-repeat: no-repeat;
+
+  }
+
+  .card-md {
+    margin: 0px !important;
+  }
+
+  .head h1 {
+    font-size: 7vh!important;
+    font-weight: lighter!important;
+    font-family: 'Pacifico', cursive;
+  }
+
+  .head p {
+    font-size: 2vh!important;
+    font-weight: lighter!important;
+    font-family: 'Pacifico', cursive;
+  }
+  ion-card.card {
+    position: absolute !important;
+    display: block !important;;
+    top: 50% !important;;
+    left: 50% !important;;
+    transform: translate(-50%, -50%) !important;;
+    width: 90% !important;;
+    color: #fff !important;;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+  }
+
+
+  a, p,
+  ion-card-header.card-header {
+    color: #fff!important;
+  }
+
+  .list > .item-block:first-child {
+    border: medium none;
+  }
+
+  .item {
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 9px;
+
+    .text-input {
+      color: #fff;
+    }
+
+    input::-moz-placeholder  {
+      color: #fff!important;
+    }
+
+    input:-moz-placeholder {
+      color: #fff!important;
+    }
+
+    *::-webkit-input-placeholder  {
+      color: #fff!important;
+    }
+
+    *:-ms-input-placeholder  {
+      color: #fff!important;
+    }
+
+    *:-moz-placeholder  {
+      color: #fff!important;
+    }
+  }
+
+  .icon {
+    padding-right: 10px;
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .btn{
+    border-radius: 9px;
+    margin-bottom: 13px;
+  }
+
+
+}

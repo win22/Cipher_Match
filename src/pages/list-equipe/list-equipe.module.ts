@@ -4,6 +4,7 @@ import { ListEquipePage } from './list-equipe';
 
 @NgModule({
   declarations: [
+
   ],
   imports: [
     IonicPageModule.forChild(ListEquipePage),

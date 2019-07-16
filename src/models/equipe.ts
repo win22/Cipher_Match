@@ -5,5 +5,6 @@ export interface Equipe {
   entreneur: string;
   nombreJour: string;
   images: string [];
+  site?:string;
 
 }

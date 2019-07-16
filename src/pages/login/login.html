@@ -1,0 +1,47 @@
+
+  <ion-content class="bg" no-margin="">
+    <div class="head" text-center>
+      <h1>Cipher</h1>
+    </div>
+    <ion-card [formGroup]="authForm">
+      <ion-card-header text-center *ngIf="mode == 'connect'" class="animated fadeInDown" >
+        Cipher | connexion
+      </ion-card-header>
+      <ion-card-header text-center *ngIf="mode == 'new'"class="animated fadeInDown" >
+        Cipher | inscription
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list no-lines>
+          <ion-item>
+            <ion-input type="text" formControlName="email" placeholder="Email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
+          </ion-item>
+
+          <button ion-button block outline color="light" (click)="onSubmitForm()"class="btn">se connecter</button>
+          <p text-center *ngIf="mode == 'connect'">OR</p>
+          <button *ngIf="mode == 'connect'"  ion-button full color="facebook" class="btn" (click)="onSignFacebook()">
+            <ion-icon name="logo-facebook" ></ion-icon> Login with facebook
+          </button>
+
+          <button *ngIf="mode == 'connect'"   ion-button full color="danger" class="btn"  (click)="onNavigate(loginPage, {mode: 'new'})">
+            <ion-icon name="user"></ion-icon>S'inscrire
+          </button>
+          <button *ngIf="mode == 'new'"  ion-button full color="danger" class="btn" (click)="onBack()">
+            <ion-icon name="back"></ion-icon> retour
+          </button>
+        </ion-list>
+      </ion-card-content>
+      <span ion-text color="danger">{{ errorMessage }}</span>
+    </ion-card>
+
+  </ion-content>
+  <ion-footer>
+    <div class="head" text-center>
+      <p>Vibrez au plaisir du football sur votre mobile!</p>
+    </div>
+  </ion-footer>
+
+
+

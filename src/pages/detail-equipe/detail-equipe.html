@@ -1,0 +1,43 @@
+<ion-header xmlns="http://www.w3.org/1999/html" color="pink">
+  <ion-navbar>
+    <ion-title>
+      {{equipe.title}}
+
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen class="bg">
+  <ion-list>
+      <ion-card>
+        <ion-item>
+          <ion-avatar item-start>
+            <ion-img [src]="equipe.images[4]"></ion-img>
+          </ion-avatar>
+          <p text-center> Entreneure </p>
+          <p text-center>  {{equipe.entreneur}} </p>
+          <ion-avatar item-end>
+            <ion-img [src]="equipe.images[0]"></ion-img>
+          </ion-avatar>
+        </ion-item>
+        <ion-slides pager>
+          <ion-slide>
+            <img  class="img2" [src]="equipe.images[1]">
+          </ion-slide>
+          <ion-slide>
+            <img  class="img2" [src]="equipe.images[2]">
+          </ion-slide>
+          <ion-slide>
+            <img  class="img2" [src]="equipe.images[3]">
+          </ion-slide>
+        </ion-slides>
+      </ion-card>
+  </ion-list>
+    <p padding="">{{equipe.desciption}}</p>
+  <p padding> cette equipe appartient au championat de :{{equipe.competition}}<br>
+    Visitez le site officiel pour plus d'information : <br>
+    <strong text-center="">{{equipe.site}}</strong>
+
+  </p>
+
+</ion-content>

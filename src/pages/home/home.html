@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="bar-positive">
   <ion-navbar color="pink">
     <button ion-button="" menuToggle="" (click)="onToggleMenu()">
       <ion-icon name="menu"></ion-icon>
@@ -9,23 +9,17 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content fullscreen class="bg">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="récuperation des données du serveur...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <p text-center>Toute l'actualité du Football de cette semaine</p>
 
-  <ion-card>
-    <p>Le Top 10 des meilleurs Joueurs cette semaine...</p>
-        <ion-slides pager autoplay="1500" loop="true">
-      <ion-slide class="card1" *ngFor="let j of ListJoueurs">
-        <img src="{{j.image}}">
-        <ion-item>
-          {{j.title}}
-        </ion-item>
-      </ion-slide>
-    </ion-slides>
-
-  </ion-card>
-  <ion-item-divider color="pink">
-    <ion-label>Actualié du monde des Foot</ion-label>
-  </ion-item-divider>
 
   <ion-list>
   <ion-card class="ion-card" *ngFor="let m of ListMatch"   (click)="showDetail(m)">
@@ -35,8 +29,10 @@
       </ion-avatar>
       <p> Date du Match: {{m.date}}</p>
     </ion-item>
+      <div class="img2">
+        <img  class="img2" [src]="m.images[1]">
+      </div>
 
-      <img  [src]="m.images[1]">
       <div><p class="card-title">{{m.title1}} {{m.score1}} - {{m.scorre2}}  {{m.title2}}</p></div>
       <div class="card-subtitle">{{m.stade}}</div>
       <p >{{m.brefDesc}} Lire plus....</p>
