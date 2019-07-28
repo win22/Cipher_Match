@@ -19,7 +19,7 @@
             <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
           </ion-item>
 
-          <button ion-button block outline color="light" (click)="onSubmitForm()"class="btn">se connecter</button>
+          <button ion-button block outline color="light" (click)="onSubmitForm()"class="btn"><p *ngIf="mode == 'connect'">connexion</p><p *ngIf="mode =='new'">S'inscrire</p></button>
           <p text-center *ngIf="mode == 'connect'">OR</p>
           <button *ngIf="mode == 'connect'"  ion-button full color="facebook" class="btn" (click)="onSignFacebook()">
             <ion-icon name="logo-facebook" ></ion-icon> Login with facebook

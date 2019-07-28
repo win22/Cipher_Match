@@ -108,7 +108,7 @@ export class LoginPage  implements  OnInit{
         (error) => {
           loader.dismiss();
           this.toastCtrl.create({
-            message: 'Veuillez verifier votre connexion...',
+            message: error,
             duration: 3000,
             position: 'bottom'
           }).present();
@@ -130,7 +130,7 @@ export class LoginPage  implements  OnInit{
           loader.dismiss();
           console.log(error)
           this.toastCtrl.create({
-            message: 'Veuillez verifier votre connexion...',
+            message: error,
             duration: 3000,
             position: 'bottom'
           }).present();
@@ -150,7 +150,7 @@ export class LoginPage  implements  OnInit{
   }
 
   onBack() {
-    this.navCtl.pop();
+    this.mode= 'connect'
   }
 
   hideTabs(){
