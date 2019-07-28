@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
 import {LoginPage} from "../login/login";
 import {AuthService} from "../../services/auth.service";
-import {TabsPage} from "../tabs/tabs";
+
+import {MenuPage} from "../menu/menu";
 
 /**
  * Generated class for the ScreenPage page.
@@ -41,7 +42,7 @@ export class ScreenPage {
   private login(){
     let authenticated = this.authService.loadToken();
     if (authenticated){
-      this.navCtrl.setRoot(TabsPage);
+      this.navCtrl.setRoot(MenuPage);
     } else {
       this.navCtrl.setRoot(LoginPage, {mode: 'connect'})
     }
