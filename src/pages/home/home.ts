@@ -10,11 +10,13 @@ import {Subscription} from "rxjs";
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
+
 })
 export class HomePage implements OnInit{
   ListMatchsubscription: Subscription;
   ListJoueurs : Joueurs[];
   ListMatch: Match [];
+  mode: string;
   constructor(public navCtrl: NavController,
               private seriveJour: JoueursService,
               private loadinCtl: LoadingController,
@@ -25,6 +27,8 @@ export class HomePage implements OnInit{
     this.ListJoueurs = this.seriveJour.ListJours.slice()
     //this.ListMatch = this.serviceMatch.ListMatch.slice()
   }
+
+
 
 
   ngOnInit() {

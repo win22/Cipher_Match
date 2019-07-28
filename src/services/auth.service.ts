@@ -34,7 +34,7 @@ export class AuthService {
   }
 
 
-  private saveToken(){
+  public saveToken(){
     this.token ="azerty1";
     localStorage.setItem("myToken", this.token);
   }

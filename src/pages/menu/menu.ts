@@ -8,7 +8,7 @@ import  * as firebase from  'firebase';
 import {LoginPage} from "../login/login";
 import {AuthService} from "../../services/auth.service";
 import {ScreenPage} from "../screen/screen";
-
+import { Facebook} from "@ionic-native/facebook";
 
 @IonicPage()
 @Component({
@@ -17,20 +17,34 @@ import {ScreenPage} from "../screen/screen";
 })
 export class MenuPage implements OnInit{
 
-  rootPage: any = HomePage;
+  rootPage: any = TabsPage;
   equipePage: any = ListEquipePage;
   help: any = HelpPage;
-
+  userData= null;
+  mode: string;
+  authenticated2: boolean;
   @ViewChild('content') content
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private  menuCtl: MenuController,
+              public facebook:Facebook,
               private authService: AuthService) {
   }
 
   ngOnInit(): void {
     this.login();
+    this.mode = this.navParams.get('mode');
+    if(this.mode =='Facebook') {
+      this.facebook.api('me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture_large)', []).then(profile => {
+        this.userData = {
+          email: profile['email'],
+          first_name: profile['first_name'],
+          picture:profile['picture_large']['data']['url'],
+          username:profile['name']
+        }
+      })
+    }
   }
 
   ionViewDidLoad() {
@@ -53,9 +67,12 @@ export class MenuPage implements OnInit{
     let authenticated = this.authService.loadToken();
     if (authenticated){
       //this.navCtrl.setRoot(MenuPage)
+      this.authenticated2 = true;
     } else {
-      this.navCtrl.setRoot(LoginPage, {mode: 'connect'})
+      this.navCtrl.push(LoginPage, {mode: 'connect'})
+
     }
   }
+
 
 }

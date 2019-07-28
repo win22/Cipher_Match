@@ -3,8 +3,9 @@ import {AlertController, IonicPage, LoadingController, NavController, NavParams,
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";
 import {TabsPage} from "../tabs/tabs";
-
-
+import { Facebook} from "@ionic-native/facebook";
+import  firebase from 'firebase';
+import {MenuPage} from "../menu/menu";
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -24,6 +25,7 @@ export class LoginPage  implements  OnInit{
               public forgotCtrl: AlertController,
               public loadingCtrl: LoadingController,
               public toastCtrl: ToastController,
+              public facebook:Facebook,
 
             ) {
 
@@ -101,7 +103,7 @@ export class LoginPage  implements  OnInit{
       }); loader.present();
       this.authService.signUpUser(email, password).then(
         () =>{
-          this.navCtl.setRoot(TabsPage);
+          this.navCtl.setRoot(MenuPage);
           loader.dismiss();
         }
       ).catch(
@@ -122,7 +124,7 @@ export class LoginPage  implements  OnInit{
       }); loader.present();
       this.authService.signInUser(email, password).then(
         ()=>{
-          this.navCtl.setRoot(TabsPage);
+          this.navCtl.setRoot(MenuPage);
           loader.dismissAll();
         }
       ).catch(
@@ -140,7 +142,19 @@ export class LoginPage  implements  OnInit{
   }
 
   onSignFacebook() {
+    this.facebook.login(['email']).then(res => {
+      const fc = firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken);
+      firebase.auth().signInWithCredential(fc).then(fc=>{
+        this.navCtl.setRoot(MenuPage, {mode: 'Facebook'} );
+        this.authService.saveToken();
 
+      }).catch(ferr =>{
+        alert("Essaie encore Sagesse!");
+      });
+
+    }).catch(err =>{
+      alert(JSON.stringify(err));
+    });
   }
 
   onNavigate(page: any, data?:{}){

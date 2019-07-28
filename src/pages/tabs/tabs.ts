@@ -5,6 +5,7 @@ import {MatchPage} from "../match/match";
 import {SettingsPage} from "../settings/settings";
 import {LoginPage} from "../login/login";
 import {AuthService} from "../../services/auth.service";
+import {HomePage} from "../home/home";
 
 @IonicPage()
 @Component({
@@ -12,7 +13,7 @@ import {AuthService} from "../../services/auth.service";
   templateUrl: 'tabs.html',
 })
 export class TabsPage implements OnInit{
-  homePage = MenuPage;
+  homePage = HomePage;
   matchPage = MatchPage;
   settingsPage = SettingsPage;
   authenticated2: boolean;
@@ -40,8 +41,6 @@ export class TabsPage implements OnInit{
       this.authenticated2 = true;
     } else {
       this.navCtrl.push(LoginPage, {mode: 'connect'})
-
-
 
     }
   }

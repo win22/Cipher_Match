@@ -15,6 +15,7 @@ import {ListEquipePage} from "../pages/list-equipe/list-equipe";
 import {EquipeService} from "../services/equipe.service";
 
 import * as firebase from 'firebase';
+import { Facebook} from "@ionic-native/facebook";
 import {MatchPage} from "../pages/match/match";
 import {MatchProgramService} from "../services/matchProgram.service";
 import {SettingsPage} from "../pages/settings/settings";
@@ -86,9 +87,8 @@ firebase.initializeApp(firebaseConfig);
     EquipeService,
     MatchProgramService,
     AuthService,
-
-
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Facebook,
   ]
 })
 export class AppModule {}
