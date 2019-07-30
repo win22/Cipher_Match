@@ -23,6 +23,7 @@ export class MenuPage implements OnInit{
   userData= null;
   mode: string;
   authenticated2: boolean;
+  authenticated1: boolean;
   @ViewChild('content') content
 
   constructor(public navCtrl: NavController,
@@ -65,10 +66,12 @@ export class MenuPage implements OnInit{
 
   private login(){
     let authenticated = this.authService.loadToken();
-    if (authenticated){
-      //this.navCtrl.setRoot(MenuPage)
+    let authenticated3 = this.authService.loadTokenF();
+    if (authenticated || authenticated3){
       this.authenticated2 = true;
-    } else {
+    }
+
+    else {
       this.navCtrl.push(LoginPage, {mode: 'connect'})
 
     }

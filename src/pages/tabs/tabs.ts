@@ -17,6 +17,7 @@ export class TabsPage implements OnInit{
   matchPage = MatchPage;
   settingsPage = SettingsPage;
   authenticated2: boolean;
+  authenticated1: boolean;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -36,10 +37,12 @@ export class TabsPage implements OnInit{
   }
   private login(){
     let authenticated = this.authService.loadToken();
-    if (authenticated){
-      //this.navCtrl.setRoot(MenuPage)
+    let authenticated3 = this.authService.loadTokenF();
+    if (authenticated || authenticated3){
       this.authenticated2 = true;
-    } else {
+    }
+
+    else {
       this.navCtrl.push(LoginPage, {mode: 'connect'})
 
     }

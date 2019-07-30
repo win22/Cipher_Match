@@ -3,8 +3,9 @@
 export class AuthService {
 
   public authenticated:boolean;
-
+  public authenticated2:boolean;
   public token: string;
+  public  token2: string;
   signUpUser(email: string, password: string) {
     return new Promise((resolve, reject) => {
       firebase.auth().createUserWithEmailAndPassword(email, password).then(
@@ -39,9 +40,15 @@ export class AuthService {
     localStorage.setItem("myToken", this.token);
   }
 
+  public saveTokenF(){
+    this.token2 = "facebook";
+    localStorage.setItem("Face", this.token2);
+  }
+
 
   deconnexion() {
     localStorage.removeItem('myToken');
+    localStorage.removeItem("Face");
     firebase.auth().signOut();
   }
 
@@ -54,5 +61,16 @@ export class AuthService {
       this.authenticated = false;
     }
     return this.authenticated;
+  }
+
+  public loadTokenF(){
+    this.token2 = localStorage.getItem("Face");
+    if(this.token2 == 'facebook'){
+      this.authenticated2 = true;
+      return true
+    }else {
+      this.authenticated2 = false;
+    }
+    return this.authenticated2;
   }
 }

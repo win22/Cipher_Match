@@ -3,7 +3,7 @@ import {AlertController, IonicPage, LoadingController, NavController, NavParams,
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";
 import {TabsPage} from "../tabs/tabs";
-import { Facebook} from "@ionic-native/facebook";
+import {Facebook, FacebookLoginResponse} from "@ionic-native/facebook";
 import  firebase from 'firebase';
 import {MenuPage} from "../menu/menu";
 @IonicPage()
@@ -142,11 +142,22 @@ export class LoginPage  implements  OnInit{
   }
 
   onSignFacebook() {
-    this.facebook.login(['email']).then(res => {
+    /**let provider = new firebase.auth.FacebookAuthProvider();
+
+    firebase.auth().signInWithRedirect(provider).then(() => {
+        firebase.auth().getRedirectResult().then((res)=>{
+
+        }).catch(function (error) {
+          alert(JSON.stringify(error))
+
+        })
+    });*/
+
+    this.facebook.login(['email']).then((res: FacebookLoginResponse) => {
       const fc = firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken);
       firebase.auth().signInWithCredential(fc).then(fc=>{
         this.navCtl.setRoot(MenuPage, {mode: 'Facebook'} );
-        this.authService.saveToken();
+        this.authService.saveTokenF();
 
       }).catch(ferr =>{
         alert("Essaie encore Sagesse!");

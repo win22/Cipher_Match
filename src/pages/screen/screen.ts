@@ -41,12 +41,19 @@ export class ScreenPage {
   }
   private login(){
     let authenticated = this.authService.loadToken();
+    let authenticated2 = this.authService.loadTokenF();
     if (authenticated){
       this.navCtrl.setRoot(MenuPage);
-    } else {
+    }
+    if (authenticated2){
+      this.navCtrl.setRoot(MenuPage, {mode: 'Facebook'});
+    }
+    else {
       this.navCtrl.setRoot(LoginPage, {mode: 'connect'})
     }
   }
+
+
 
 
 
