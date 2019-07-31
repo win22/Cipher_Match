@@ -17,17 +17,26 @@
       </ion-item>
 
 
-
+      <ion-item *ngIf="mode =='admin'" >
+        <ion-avatar item-start>
+          <img src="assets/icon/user.png">
+        </ion-avatar>
+        <p> admin | Sagesse</p>
+      </ion-item>
     <button ion-item icon-start (click)="onNavigatePage(rootPage)">
-      <ion-icon name="home" color="pink"></ion-icon>
+      <ion-icon name="home" color=""></ion-icon>
       Acceuil
     </button>
     <button ion-item icon-start (click)="onNavigatePage(equipePage)">
-      <ion-icon name="people" color="pink"></ion-icon>
+      <ion-icon name="people" color=""></ion-icon>
       Equipe
     </button>
+      <button *ngIf="mode =='admin'" ion-item icon-start (click)="onNavigatePage(settingsPage)">
+        <ion-icon name="add" color=""></ion-icon>
+        add news
+      </button>
     <button ion-item icon-start (click)="onNavigatePage(help)">
-      <ion-icon name="help" color="pink"></ion-icon>
+      <ion-icon name="help" color=""></ion-icon>
       Aide
     </button>
     <button ion-item icon-start (click)="Deconnexion()">

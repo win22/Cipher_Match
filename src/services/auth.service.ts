@@ -4,8 +4,10 @@ export class AuthService {
 
   public authenticated:boolean;
   public authenticated2:boolean;
+  public authenticated3:boolean;
   public token: string;
   public  token2: string;
+  public token3 : string;
   signUpUser(email: string, password: string) {
     return new Promise((resolve, reject) => {
       firebase.auth().createUserWithEmailAndPassword(email, password).then(
@@ -34,6 +36,17 @@ export class AuthService {
     });
   }
 
+  public  login(email:string, password:string){
+    if (email== 'admin@gmail.com' && password=='admin1234'){
+      this.authenticated3 = true
+      this.saveTokenA();
+
+    }else {
+      this.authenticated3 = false
+    }
+    return this.authenticated3;
+  }
+
 
   public saveToken(){
     this.token ="azerty1";
@@ -45,10 +58,16 @@ export class AuthService {
     localStorage.setItem("Face", this.token2);
   }
 
+  public saveTokenA(){
+    this.token3 = "admin";
+    localStorage.setItem("AD", this.token3)
+  }
+
 
   deconnexion() {
     localStorage.removeItem('myToken');
     localStorage.removeItem("Face");
+    localStorage.removeItem("AD");
     firebase.auth().signOut();
   }
 
@@ -72,5 +91,16 @@ export class AuthService {
       this.authenticated2 = false;
     }
     return this.authenticated2;
+  }
+
+  public loadTokenA(){
+    this.token3 = localStorage.getItem("AD");
+    if(this.token3 == 'admin'){
+      this.authenticated3 = true;
+      return true
+    }else {
+      this.authenticated3 = false;
+    }
+    return this.authenticated3;
   }
 }

@@ -38,7 +38,8 @@ export class TabsPage implements OnInit{
   private login(){
     let authenticated = this.authService.loadToken();
     let authenticated3 = this.authService.loadTokenF();
-    if (authenticated || authenticated3){
+    let authenticated4 = this.authService.loadTokenA();
+    if (authenticated || authenticated3 || authenticated4){
       this.authenticated2 = true;
     }
 

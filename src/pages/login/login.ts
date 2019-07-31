@@ -101,7 +101,8 @@ export class LoginPage  implements  OnInit{
       let loader = this.loadingCtrl.create({
         content: 'Patientez svp...'
       }); loader.present();
-      this.authService.signUpUser(email, password).then(
+
+        this.authService.signUpUser(email, password).then(
         () =>{
           this.navCtl.setRoot(MenuPage);
           loader.dismiss();
@@ -118,41 +119,39 @@ export class LoginPage  implements  OnInit{
       );
 
 
-    }else if (this.mode === 'connect'){
+    }else if (this.mode === 'connect') {
       let loader = this.loadingCtrl.create({
         content: 'Patientez svp...'
-      }); loader.present();
-      this.authService.signInUser(email, password).then(
-        ()=>{
-          this.navCtl.setRoot(MenuPage);
-          loader.dismissAll();
-        }
-      ).catch(
-        (error) => {
-          loader.dismiss();
-          console.log(error)
-          this.toastCtrl.create({
-            message: error,
-            duration: 3000,
-            position: 'bottom'
-          }).present();
-        }
-      );
+      });
+      loader.present();
+      if (email == 'admin@gmail.com' && password == 'admin1234') {
+        this.authService.saveTokenA();
+        this.navCtl.setRoot(MenuPage, {mode : 'admin'});
+        loader.dismiss();
+      } else {
+
+
+        this.authService.signInUser(email, password).then(
+          () => {
+            this.navCtl.setRoot(MenuPage);
+            loader.dismissAll();
+          }
+        ).catch(
+          (error) => {
+            loader.dismiss();
+            console.log(error)
+            this.toastCtrl.create({
+              message: error,
+              duration: 3000,
+              position: 'bottom'
+            }).present();
+          }
+        );
+      }
     }
   }
 
   onSignFacebook() {
-    /**let provider = new firebase.auth.FacebookAuthProvider();
-
-    firebase.auth().signInWithRedirect(provider).then(() => {
-        firebase.auth().getRedirectResult().then((res)=>{
-
-        }).catch(function (error) {
-          alert(JSON.stringify(error))
-
-        })
-    });*/
-
     this.facebook.login(['email']).then((res: FacebookLoginResponse) => {
       const fc = firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken);
       firebase.auth().signInWithCredential(fc).then(fc=>{

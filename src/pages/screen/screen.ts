@@ -5,13 +5,6 @@ import {AuthService} from "../../services/auth.service";
 
 import {MenuPage} from "../menu/menu";
 
-/**
- * Generated class for the ScreenPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-screen',
@@ -29,7 +22,7 @@ export class ScreenPage {
     console.log('ionViewDidLoad ScreenPage');
     this.hideTabs();
     let loader = await this.loadingCtrl.create({
-      content: 'Veuillez patienter un instant s\'il vous plait...'
+      content: 'Veuillez patienter un instant...'
     });
     loader.present();
 
@@ -42,11 +35,15 @@ export class ScreenPage {
   private login(){
     let authenticated = this.authService.loadToken();
     let authenticated2 = this.authService.loadTokenF();
-    if (authenticated){
+    let authenticated3 = this.authService.loadTokenA();
+    if (authenticated ){
       this.navCtrl.setRoot(MenuPage);
     }
-    if (authenticated2){
+    else if (authenticated2){
       this.navCtrl.setRoot(MenuPage, {mode: 'Facebook'});
+    }
+    else if (authenticated3){
+      this.navCtrl.setRoot(MenuPage, {mode: 'admin'});
     }
     else {
       this.navCtrl.setRoot(LoginPage, {mode: 'connect'})

@@ -1,3 +1,30 @@
 page-settings {
+  .bg {
+    height: 100%;
+    width: 100%;
+    padding-top: 12px;
+    background: url('../assets/imgs/bg.jpg');
 
+  }
+
+  p{
+    color: #ffffff !important;
+  }
+  ion-input{
+    border-color: #007aff;
+    color: #1c1c1c !important;
+    background: #f9f9f9 !important;
+    border-radius: 6px;
+  }
+
+  .btn{
+    border-radius: 9px !important;
+    margin-bottom: 13px !important;
+  }
+
+  ion-grid{
+    padding-top: 12px;
+    border-radius: 9px !important;
+    background: rgba(0, 0, 0, 0.5);
+  }
 }

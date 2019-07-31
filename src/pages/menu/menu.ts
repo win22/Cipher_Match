@@ -9,6 +9,7 @@ import {LoginPage} from "../login/login";
 import {AuthService} from "../../services/auth.service";
 import {ScreenPage} from "../screen/screen";
 import { Facebook} from "@ionic-native/facebook";
+import {SettingsPage} from "../settings/settings";
 
 @IonicPage()
 @Component({
@@ -19,6 +20,7 @@ export class MenuPage implements OnInit{
 
   rootPage: any = TabsPage;
   equipePage: any = ListEquipePage;
+  settingsPage: any = SettingsPage;
   help: any = HelpPage;
   userData= null;
   mode: string;
@@ -67,7 +69,8 @@ export class MenuPage implements OnInit{
   private login(){
     let authenticated = this.authService.loadToken();
     let authenticated3 = this.authService.loadTokenF();
-    if (authenticated || authenticated3){
+    let authenticated4 = this.authService.loadTokenA();
+    if (authenticated || authenticated3 || authenticated4){
       this.authenticated2 = true;
     }
 

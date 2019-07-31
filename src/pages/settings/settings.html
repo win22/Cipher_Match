@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar color="pink">
     <button ion-button="" menuToggle="" (click)="onToggleMenu()">
@@ -8,6 +7,39 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="bg">
 
+  <ion-grid>
+    <p text-center>Add a Programme of Match</p>
+    ___________________________________________
+    <ion-row>
+      <ion-col>
+        <ion-input color="pink" type="text" placeholder="Equipe 1"></ion-input>
+      </ion-col>
+      <ion-col>
+         <ion-input type="text" placeholder="Equipe 2"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input type="text" placeholder="Stade"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input type="text" placeholder="Prix du ticket"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input color="pink" type="text" placeholder="Lieu"></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-input type="text" placeholder="Date"></ion-input>
+      </ion-col>
+    </ion-row>
+    <button class="btn"  ion-button full color="facebook" class="btn">
+       Sauvegarder
+    </button>
+  </ion-grid>
 </ion-content>
