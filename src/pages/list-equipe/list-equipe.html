@@ -4,11 +4,14 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Equipes</ion-title>
+    <ion-buttons end>
+      <p class="ci">Cipher</p>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
+<ion-content>
+
     <ion-item ion-item  *ngFor="let e of List"  (click)="showDetail(e)">
       <ion-thumbnail item-start>
         <img src="{{e.images[0]}}" width="30px">
@@ -16,5 +19,5 @@
       <h2>{{e.title}}</h2>
       <h3>{{e.entreneur}}</h3>
     </ion-item>
-  </ion-list>
+
 </ion-content>

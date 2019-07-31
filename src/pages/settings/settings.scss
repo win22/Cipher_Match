@@ -1,4 +1,5 @@
 page-settings {
+  @import url('https://fonts.googleapis.com/css?family=Pacifico');
   .bg {
     height: 100%;
     width: 100%;
@@ -6,7 +7,11 @@ page-settings {
     background: url('../assets/imgs/bg.jpg');
 
   }
-
+  .ci{
+    font-size: 16px!important;
+    font-weight: lighter!important;
+    font-family: 'Pacifico', cursive;
+  }
   p{
     color: #ffffff !important;
   }

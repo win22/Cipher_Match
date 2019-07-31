@@ -13,23 +13,26 @@
       <ion-card-content>
         <ion-list no-lines>
           <ion-item>
+
             <ion-input type="text" formControlName="email" placeholder="Email"></ion-input>
           </ion-item>
           <ion-item>
             <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
           </ion-item>
 
-          <button ion-button block outline color="light" (click)="onSubmitForm()"class="btn"><p *ngIf="mode == 'connect'">connexion</p><p *ngIf="mode =='new'">S'inscrire</p></button>
+          <button ion-button block outline color="light" (click)="onSubmitForm()"class="btn"><p *ngIf="mode == 'connect'">
+            <ion-icon name="person"></ion-icon>
+            connexion</p><p *ngIf="mode =='new'"> <ion-icon name="person-add"></ion-icon>S'inscrire</p></button>
           <p text-center *ngIf="mode == 'connect'">OR</p>
           <button *ngIf="mode == 'connect'"  ion-button full color="facebook" class="btn" (click)="onSignFacebook()">
             <ion-icon name="logo-facebook" ></ion-icon> Login with facebook
           </button>
 
           <button *ngIf="mode == 'connect'"   ion-button full color="danger" class="btn"  (click)="onNavigate(loginPage, {mode: 'new'})">
-            <ion-icon name="user"></ion-icon>S'inscrire
+            <ion-icon name="person-add"></ion-icon>S'inscrire
           </button>
           <button *ngIf="mode == 'new'"  ion-button full color="danger" class="btn" (click)="onBack()">
-            <ion-icon name="back"></ion-icon> retour
+            <ion-icon name="return-left"></ion-icon> retour
           </button>
         </ion-list>
       </ion-card-content>

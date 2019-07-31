@@ -1,5 +1,5 @@
 page-detail-equipe {
-
+  @import url('https://fonts.googleapis.com/css?family=Pacifico');
   .bg {
     height: 100%;
     width: 100%;
@@ -9,6 +9,11 @@ page-detail-equipe {
 
   p{
     color: #ffffff !important;
+  }
+  .ci{
+    font-size: 16px!important;
+    font-weight: lighter!important;
+    font-family: 'Pacifico', cursive;
   }
   .img2{
 

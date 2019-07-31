@@ -1,4 +1,5 @@
 page-match {
+  @import url('https://fonts.googleapis.com/css?family=Pacifico');
   .bg {
     height: 100%;
     width: 100%;
@@ -6,7 +7,11 @@ page-match {
     background: linear-gradient(180deg, rgba(0,0,0,0.98) 1.48%, rgba(3,62,119,0.68) 12.58%,
       rgb(89, 17, 83) 89.52%), url('../assets/imgs/bg.jpg');
   }
-
+  .ci{
+    font-size: 16px!important;
+    font-weight: lighter!important;
+    font-family: 'Pacifico', cursive;
+  }
   ion-avatar{
     width: 35px !important;
     height: 35px !important;

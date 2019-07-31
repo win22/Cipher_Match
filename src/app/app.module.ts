@@ -25,7 +25,7 @@ import {AuthService} from "../services/auth.service";
 import {IonicStorageModule} from "@ionic/storage";
 import {ScreenPage} from "../pages/screen/screen";
 import {HelpPage} from "../pages/help/help";
-
+import {CallNumber} from "@ionic-native/call-number";
 
 
 export const firebaseConfig = {
@@ -89,6 +89,7 @@ firebase.initializeApp(firebaseConfig);
     AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Facebook,
+    CallNumber,
   ]
 })
 export class AppModule {}

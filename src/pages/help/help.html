@@ -5,20 +5,45 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Aide</ion-title>
+    <ion-buttons end>
+      <button ion-button  (click)="TestUpdate()">Version: 1.1.0</button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="bg">
+  <p>Nous vous remerçions pour l'interet et la confiance que vous portez à notre Equipe
+    En utilisant <span class="ci">Cipher</span> comme etant votre Application de choix pour ce qui concerne
+    Les actualitées de la toile concernant le football de manière Général</p>
 
-  <p text-center="">
-    Cette application a été developpé par des Etudiant de Master1 | GL ISI À savoir: <br>
-  </p>
-  <p text-center="">
-    <strong>Sagesse DIHAMBOU</strong> &
-    <strong>Thonny LARS</strong>
-  </p>
+  <p>Creer dans le cadre
+    d'un projet informatique, sous la tutel de Monsieur Seck(Developper Seigneur),<br>
+    Le but etait de mettre en place
+  en place une application qui devrait aux amatteurs de football d'avoir de maniere direct les informations
+  Concernant le deroulement des championats, le résultat des Matchs ainsi que les informations des Equipes</p>
 
-  <p text-center="">
-    Grace à notre Bon Prof Mr Seck
-  </p>
+  <p>Nous esperons que cette Application est à la hauteur de vos attentes,Nous tenons à rappeler que ceci est une version
+  Beta et que toutes l'Equipe ne cesse de travailler sur l'amelioration de l'Application</p>
+
+  <ion-grid>
+    <p>Pour toute suggestion, veuillez laisser un message</p>
+    <ion-row>
+      <ion-col col-9>
+        <ion-input type="textArea"></ion-input>
+      </ion-col>
+      <ion-col col-3>
+        <button class="btn" icon-only="" ion-button full color="facebook" class="btn">
+          <ion-icon name="send"></ion-icon>
+        </button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+    <ion-footer fixed>
+      <button end ion-button fixed color="secondary" (click)="Call()" full round icon-only >
+        <ion-icon name="call"></ion-icon>&nbsp;
+        <p>Applez-nous!</p>
+      </button>
+    </ion-footer>
+
 </ion-content>

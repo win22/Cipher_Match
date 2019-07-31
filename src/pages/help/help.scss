@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 page-help {
   .bg {
     height: 100%;
@@ -8,5 +9,27 @@ page-help {
 
   p{
     color: #ffffff !important;
+  }
+  ion-input{
+    border-color: #007aff;
+    color: #1c1c1c !important;
+    background: #f9f9f9 !important;
+    border-radius: 6px;
+  }
+
+  .ci{
+    font-size: 2vh!important;
+    font-weight: lighter!important;
+    font-family: 'Pacifico', cursive;
+  }
+  .btn{
+    border-radius: 9px !important;
+    margin-bottom: 13px !important;
+  }
+
+  ion-grid{
+    padding-top: 12px;
+    border-radius: 9px !important;
+    background: rgba(0, 0, 0, 0.5);
   }
 }

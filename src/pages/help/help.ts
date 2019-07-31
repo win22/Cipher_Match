@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular';
-
-/**
- * Generated class for the HelpPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {IonicPage, LoadingController, MenuController, NavController, NavParams, ToastController} from 'ionic-angular';
+import { CallNumber } from '@ionic-native/call-number';
 
 @IonicPage()
 @Component({
@@ -15,7 +9,12 @@ import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular
 })
 export class HelpPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private menuCtl: MenuController) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private loadinCtl: LoadingController,
+              private toastCtl: ToastController,
+              private callNumber: CallNumber,
+              private menuCtl: MenuController) {
   }
 
   ionViewDidLoad() {
@@ -26,4 +25,26 @@ export class HelpPage {
     this.menuCtl.open();
   }
 
+  public Call(){
+    this.callNumber.callNumber("+221781578366", true)
+      .then(res => console.log('Launched dialer!', res))
+      .catch(err => console.log('Error launching dialer', err));
+  }
+
+  TestUpdate() {
+    let loader = this.loadinCtl.create({
+      content: 'Verification des mises à jours..',
+    });
+    loader.present();
+    setTimeout(()=> {
+      this.toastCtl.create({
+        message : 'Excellent vous avez la derniere version!',
+        duration: 2500,
+        position: 'top',
+
+      }).present();
+      loader.dismiss();
+    }, 6500)
+
+  }
 }
