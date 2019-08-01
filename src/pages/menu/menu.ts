@@ -81,4 +81,7 @@ export class MenuPage implements OnInit{
   }
 
 
+  Exit() {
+    navigator['app'].exitApp();
+  }
 }

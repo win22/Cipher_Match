@@ -61,7 +61,7 @@ export class HomePage implements OnInit{
 
   onFetchist(){
     let loader = this.loadinCtl.create({
-      content: 'Récupération des données depuis le serveur en cours...'
+      content: 'Chargement'
     });
     loader.present();
     this.ListMatchsubscription  =  this.serviceMatch.ListMatch$.subscribe(
@@ -74,12 +74,7 @@ export class HomePage implements OnInit{
     this.serviceMatch.retrieveData().then(
       ()=>{
         loader.dismiss();
-        this.toastCtl.create({
-          message : 'Données récupérées !',
-          duration: 4000,
-          position: 'bottom',
 
-        }).present();
       }
     ).catch(
       (error)=> {
