@@ -5,7 +5,7 @@
     </button>
     <ion-title>settings</ion-title>
     <ion-buttons end>
-      <p class="ci">Cipher</p>
+      <button ion-button="" (click)="onPicture()" icon-only=""><ion-icon name="camera"></ion-icon> </button>
     </ion-buttons>
   </ion-navbar>
 
@@ -13,37 +13,64 @@
 
 <ion-content padding class="bg">
 
-  <ion-grid>
-    <p text-center>Add a Programme of Match</p>
-    ___________________________________________
-    <ion-row>
-      <ion-col>
-        <ion-input color="pink" type="text" placeholder="Equipe 1"></ion-input>
-      </ion-col>
-      <ion-col>
-         <ion-input type="text" placeholder="Equipe 2"></ion-input>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-input type="text" placeholder="Stade"></ion-input>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-input type="text" placeholder="Prix du ticket"></ion-input>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-input color="pink" type="text" placeholder="Lieu"></ion-input>
-      </ion-col>
-      <ion-col>
-        <ion-input type="text" placeholder="Date"></ion-input>
-      </ion-col>
-    </ion-row>
-    <button class="btn"  ion-button full color="facebook" class="btn">
-       Sauvegarder
-    </button>
-  </ion-grid>
+
+
+  <form #f="ngForm" (ngSubmit)="onSubmitForm(f.value)">
+    <ion-grid>
+      <p text-center>Add a Programme of Match</p>
+      <ion-row>
+        <ion-col col-10="">
+          <ion-input  type="text" ngModel name="title1"placeholder="Equipe 1"></ion-input>
+        </ion-col>
+        <ion-col col-2="">
+          <ion-icon color="primary" class="ico"  name="camera" (click)="onPicture()"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10="">
+          <ion-input color="pink"  type="text" ngModel name="title2"placeholder="Equipe 2"></ion-input>
+        </ion-col>
+        <ion-col col-2="">
+          <ion-icon  class="ico" color="primary" name="camera" (click)="onPicture2()"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input type="text" ngModel name="stadium" placeholder="Stade"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input type="text" ngModel name="ticket" placeholder="Prix du ticket"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input color="pink" type="text" ngModel name="ville" placeholder="Lieu"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input type="text" ngModel name="date" placeholder="Date"></ion-input>
+        </ion-col>
+      </ion-row>
+
+        <ion-row>
+        <ion-col *ngIf="image1" col-5>
+
+            <ion-avatar>
+              <img  [src]="image1" WIDTH="45px" padding-bottom="5px">
+            </ion-avatar>
+
+        </ion-col >
+        <ion-col *ngIf="image2" col-5>
+            <ion-avatar>
+              <img  [src]="image2" WIDTH="45px" padding-bottom="5px">
+            </ion-avatar>
+        </ion-col >
+      </ion-row>
+      <button class="btn"  type="submit" ion-button full color="facebook" class="btn">
+        Sauvegarder
+      </button>
+    </ion-grid>
+  </form>
+
 </ion-content>

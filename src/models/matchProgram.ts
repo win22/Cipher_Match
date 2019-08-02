@@ -4,5 +4,6 @@ export  interface MatchProgram {
   stadium: string;
   date: string;
   ticket?: string;
+  ville?: string;
   images: string [];
 }

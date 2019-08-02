@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {LoadingController, MenuController, NavController, ToastController} from 'ionic-angular';
-import {Joueurs} from "../../models/interface-Joueurs";
 import {JoueursService} from "../../services/Joueurs.service.";
 import {Match} from "../../models/match";
 import {MatchService} from "../../services/match.service";
@@ -14,7 +13,6 @@ import {Subscription} from "rxjs";
 })
 export class HomePage implements OnInit{
   ListMatchsubscription: Subscription;
-  ListJoueurs : Joueurs[];
   ListMatch: Match [];
   mode: string;
   constructor(public navCtrl: NavController,
@@ -24,17 +22,16 @@ export class HomePage implements OnInit{
               private toastCtl: ToastController,
 
               private menuCtl: MenuController) {
-    this.ListJoueurs = this.seriveJour.ListJours.slice()
     //this.ListMatch = this.serviceMatch.ListMatch.slice()
   }
 
 
-
+  ionViewDidLoad() {
+    this.onFetchist();
+  }
 
   ngOnInit() {
    // this.serviceMatch.saveData();
-
-    this.onFetchist();
 
   }
 
@@ -43,8 +40,8 @@ export class HomePage implements OnInit{
     this.navCtrl.push(DetailsResultatPage, {data: m})
   }
   onLoadingdata(){
-    this.ListJoueurs = this.seriveJour.ListJours.slice()
-    this.ListMatch = this.serviceMatch.ListMatch.slice()
+
+    this.ListMatch = this.serviceMatch.ListMatch.slice();
   }
 
   ionViewWillEnter(){
