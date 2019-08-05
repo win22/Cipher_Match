@@ -28,6 +28,10 @@ export class MatchProgramService {
     });
   }
 
+  public  addProgramme(match: MatchProgram){
+    this.ListProgram.push(match);
+  }
+
   retrieveData(){
     return new Promise((resolve, reject) =>{
       firebase.database().ref('programme').once('value').then(

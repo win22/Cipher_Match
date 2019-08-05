@@ -27,6 +27,7 @@ import {ScreenPage} from "../pages/screen/screen";
 import {HelpPage} from "../pages/help/help";
 import {CallNumber} from "@ionic-native/call-number";
 import { Camera } from '@ionic-native/camera';
+import {MessageService} from "../services/message.service";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAPu0jkZsC_L8XOzqeN2ZeRQ-mIEL0F_og",
@@ -87,6 +88,7 @@ firebase.initializeApp(firebaseConfig);
     EquipeService,
     MatchProgramService,
     AuthService,
+    MessageService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Facebook,
     CallNumber,

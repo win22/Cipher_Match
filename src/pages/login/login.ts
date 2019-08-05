@@ -2,10 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {AlertController, IonicPage, LoadingController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";
-import {TabsPage} from "../tabs/tabs";
 import {Facebook, FacebookLoginResponse} from "@ionic-native/facebook";
 import  firebase from 'firebase';
 import {MenuPage} from "../menu/menu";
+
+
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -93,6 +94,7 @@ export class LoginPage  implements  OnInit{
     forgot.present();
   }
 
+
   onSubmitForm() {
     const email = this.authForm.get('email').value;
     const password = this.authForm.get('password').value;
@@ -118,7 +120,6 @@ export class LoginPage  implements  OnInit{
         }
       );
 
-
     }else if (this.mode === 'connect') {
       let loader = this.loadingCtrl.create({
         content: 'Patientez svp...'
@@ -143,7 +144,7 @@ export class LoginPage  implements  OnInit{
             this.toastCtrl.create({
               message: error,
               duration: 3000,
-              position: 'bottom'
+              position: 'bottom',
             }).present();
           }
         );

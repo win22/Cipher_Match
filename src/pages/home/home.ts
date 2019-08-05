@@ -56,22 +56,23 @@ export class HomePage implements OnInit{
     }, 500);
   }
 
-  onFetchist(){
-    let loader = this.loadinCtl.create({
-      content: 'Chargement'
+
+
+    async onFetchist(){
+    let loader = await this.loadinCtl.create({
+      content: 'Chargement',
+      duration: 6000,
     });
-    loader.present();
+   await loader.present();
     this.ListMatchsubscription  =  this.serviceMatch.ListMatch$.subscribe(
       (match : Match[]) => {
         this.ListMatch = match
       }
     );
     this.serviceMatch.emitList();
-
     this.serviceMatch.retrieveData().then(
       ()=>{
-        loader.dismiss();
-
+        loader.dismissAll();
       }
     ).catch(
       (error)=> {
@@ -80,12 +81,16 @@ export class HomePage implements OnInit{
           message: error,
           duration: 4000,
           position: 'bottom',
-
         }).present();
+        loader.dismissAll();
         console.log(error);
+
       }
     );
+
   }
+
+
   onToggleMenu() {
     this.menuCtl.open();
   }

@@ -24,12 +24,12 @@
 
   <p>Nous esperons que cette Application est à la hauteur de vos attentes,Nous tenons à rappeler que ceci est une version
   Beta et que toutes l'Equipe ne cesse de travailler sur l'amelioration de l'Application</p>
-
+  <form  #f="ngForm" (ngSubmit)="onSubmitForm(f.value)">
   <ion-grid>
-    <p>Pour toute suggestion, veuillez laisser un message</p>
+    <p>Pour toute suggestion</p>
     <ion-row>
       <ion-col col-9>
-        <ion-input type="textArea"></ion-input>
+        <ion-textarea clearOnEdit="true" ngModel name="texte"placeholder="Votre message ici" ></ion-textarea>
       </ion-col>
       <ion-col col-3>
         <button class="btn" icon-only="" ion-button full color="facebook" class="btn">
@@ -39,7 +39,7 @@
 
     </ion-row>
   </ion-grid>
-
+  </form>
 
 </ion-content>
 <ion-footer>

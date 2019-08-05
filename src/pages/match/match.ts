@@ -3,7 +3,6 @@ import {IonicPage, LoadingController, MenuController, NavController, NavParams, 
 import {MatchProgram} from "../../models/matchProgram";
 import {MatchProgramService} from "../../services/matchProgram.service";
 import {Subscription} from "rxjs";
-import {Match} from "../../models/match";
 
 @IonicPage()
 @Component({
@@ -31,7 +30,8 @@ export class MatchPage {
 
   onFetchist(){
     let loader = this.loadinCtl.create({
-      content: 'Chargement'
+      content: 'Chargement',
+      duration: 5000,
     });
     loader.present();
     this.ListMatchsubscription  =  this.serviceMatch.ListProgram$.subscribe(
@@ -43,24 +43,17 @@ export class MatchPage {
     this.serviceMatch.retrieveData().then(
       ()=>{
         loader.dismiss();
-
       }
     ).catch(
       (error)=> {
         loader.dismiss();
-        this.toastCtl.create({
-          message: error,
-          duration: 4000,
-          position: 'bottom',
-
-        }).present();
-        console.log(error);
-      }
-    );
+        alert(error)
+        //console.log(error);
+      });
+    loader.dismiss();
   }
   onToggleMenu() {
     this.menuCtl.open();
   }
-
 
 }

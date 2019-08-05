@@ -1,7 +1,19 @@
 import { Component } from '@angular/core';
-import {AlertController, IonicPage, LoadingController, MenuController, NavController, NavParams} from 'ionic-angular';
+import {
+  AlertController,
+  IonicPage,
+  LoadingController,
+  MenuController,
+  NavController,
+  NavParams,
+  ToastController
+} from 'ionic-angular';
 import {MatchProgram} from "../../models/matchProgram";
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import {MatchProgramService} from "../../services/matchProgram.service";
+import {Subscription} from "rxjs";
+import {MessageService} from "../../services/message.service";
+import {Message} from "../../models/message";
 
 @IonicPage()
 @Component({
@@ -9,13 +21,18 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
   templateUrl: 'settings.html',
 })
 export class SettingsPage {
-  ListMatchP : MatchProgram;
+  ListMessagesubscription: Subscription;
+  ListMessage : Message[];
   image1 : string;
   image2: string;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public loadingCtl: LoadingController,
               public camera: Camera,
+              private toastCtl: ToastController,
+              private loadinCtl: LoadingController,
+              public matchService : MatchProgramService,
+              public messageService: MessageService,
               private alertCtl: AlertController,
               private menuCtl: MenuController,) {
   }
@@ -125,11 +142,14 @@ export class SettingsPage {
     });
     loading.present();
     match.images = [this.image1, this.image2];
-    alert(match);
-    console.log(match)
+    console.log(match);
+    this.matchService.addProgramme(match);
+    this.matchService.saveData().then(()=>{
+      loading.dismiss();
+
+    });
     loading.dismiss();
+
   }
-
-
 
 }

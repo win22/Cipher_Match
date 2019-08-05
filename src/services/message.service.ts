@@ -1,26 +1,26 @@
 import {Injectable} from "@angular/core";
-import {Match} from "../models/match";
+import {Message} from "../models/message";
 import {Subject} from "rxjs";
+import * as firebase from "firebase";
 import DataSnapshot = firebase.database.DataSnapshot;
-import  * as firebase from 'firebase';
-Injectable()
-export  class MatchService {
 
-  ListMatch$ = new Subject<Match[]>();
+@Injectable()
+export class MessageService {
 
-  ListMatch : Match [] = [
-
-
-
-  ]
+  message: Message[]=[];
+  message$ =  new  Subject<Message[]>();
 
   emitList(){
-    this.ListMatch$.next(this.ListMatch.slice());
+    this.message$.next(this.message.slice());
+  }
+
+  addMessage(mess: Message){
+    this.message.push(mess);
   }
 
   saveData(){
     return new Promise((resolve, reject) =>{
-      firebase.database().ref('actualite').set(this.ListMatch).then(
+      firebase.database().ref('message').set(this.message).then(
         (data : DataSnapshot) =>  {
           resolve(data)
         }).catch(
@@ -32,16 +32,16 @@ export  class MatchService {
 
   retrieveData(){
     return new Promise((resolve, reject) =>{
-      firebase.database().ref('actualite').once('value').then(
+      firebase.database().ref('message').once('value').then(
         (data : DataSnapshot) =>  {
-          this.ListMatch = data.val();
+          this.message = data.val();
           this.emitList();
           resolve('Données recuperé avec succes')
         }).catch(
         (error)=>{
           reject(error)
-
         });
     });
   }
 }
+
